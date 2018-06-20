@@ -1,0 +1,376 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css" class="cp-pen-styles">
+        .content {
+            bottom: 0;
+            box-sizing: border-box;
+            color: #6e6e6e;
+            display: flex;
+            height: 100%;
+            min-height: 637px;
+            left: 0;
+            position: fixed;
+            right: 0;
+            text-size-adjust: 100%;
+            top: 0;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+        }
+
+        .background {
+            background-position: 50% 50%;
+            bottom: 0;
+            box-sizing: border-box;
+            left: 0;
+            min-height: auto;
+            min-width: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+            background: rgba(0, 0, 0, 0) url(/scs/images/login-background-1280x950.jpg) no-repeat fixed 50% 50% / cover padding-box border-box;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+        }
+
+        .loginForm {
+            box-sizing: border-box;
+            display: flex;
+            height: 377px;
+            min-height: auto;
+            min-width: auto;
+            text-size-adjust: 100%;
+            width: 336.375px;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0;
+        }
+
+        .logo {
+            background-position: 50% 50%;
+            box-sizing: border-box;
+            height: 69px;
+            max-width: 324px;
+            min-height: auto;
+            min-width: auto;
+            text-size-adjust: 100%;
+            width: 324px;
+            background: rgba(0, 0, 0, 0) url(/scs/images/logo-header-login.svg) no-repeat scroll 50% 50% / contain padding-box border-box;
+            background: rgba(0, 0, 0, 0) url(/scs/images/phoenix_contact_logo_transparent.png) no-repeat scroll 50% 50% / contain padding-box border-box;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0 0 41px;
+        }
+
+        h1 {
+            box-sizing: border-box;
+            color: #fff;
+            height: 24px;
+            letter-spacing: 0.2px;
+            min-height: auto;
+            min-width: auto;
+            text-align: center;
+            text-rendering: optimizeLegibility;
+            text-size-adjust: 100%;
+            text-transform: uppercase;
+            width: 336.375px;
+            font: normal normal 600 normal 15px / 21px "TypoPRO Montserrat", Helvetica,
+            Arial, sans-serif;
+            margin: 0;
+            padding: 0 0 3px;
+        }
+
+        h4 {
+            box-sizing: border-box;
+            color: #fff;
+            height: 19px;
+            min-height: auto;
+            min-width: auto;
+            text-align: center;
+            text-rendering: optimizeLegibility;
+            text-size-adjust: 100%;
+            width: 145.266px;
+            font: normal normal 400 normal 14px / 19.6px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0 0 24px;
+        }
+
+        .input-wrap {
+            box-sizing: border-box;
+            height: 55px;
+            text-size-adjust: 100%;
+            width: 245px;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+        }
+
+        .input-wrap input {
+            box-sizing: content-box;
+            color: #fff;
+            display: block;
+            height: 28px;
+            text-size-adjust: 100%;
+            vertical-align: middle;
+            width: 245px;
+            background: rgba(255, 255, 255, 0.35) none repeat scroll 0 0 / auto padding-box border-box;
+            border: 1px solid rgba(0, 0, 0, 0);
+            font: normal normal 400 normal 13px / normal Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0 0 16px;
+            padding: 4px 5px 5px 20px;
+            box-sizing: border-box;
+        }
+
+        .input-wrap input::placeholder {
+            color: #fff;
+        }
+
+        .input-wrap input:focus, .input-wrap input:active {
+            border-color: #fff;
+            outline: 0;
+        }
+
+        input:focus::placeholder {
+            color: transparent;
+        }
+
+        .input-wrap p {
+            box-sizing: border-box;
+            display: none;
+            text-rendering: optimizeLegibility;
+            text-size-adjust: 100%;
+            font: normal normal 400 normal 16px / 25.6px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0 0 20px;
+        }
+
+        p {
+            box-sizing: border-box;
+            display: none;
+            text-rendering: optimizeLegibility;
+            text-size-adjust: 100%;
+            font: normal normal 400 normal 16px / 25.6px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 0 0 20px;
+        }
+
+        button {
+            color: #fff;
+            cursor: pointer;
+            height: 28px;
+            text-size-adjust: 100%;
+            text-transform: capitalize;
+            vertical-align: middle;
+            width: 245px;
+            border: none;
+            background-color: #e57125;
+            border-radius: 2px 2px 2px 2px;
+            font: normal normal 700 normal 13px / 13px Lato, Helvetica, Arial, sans-serif;
+            padding: 0;
+            outline: 0;
+            transition: background 0.25s ease-out;
+        }
+
+        button:focus, button:hover {
+            background-color: #f99a5c;
+        }
+
+        .footer-wrap {
+            box-sizing: border-box;
+            clear: both;
+            height: 22px;
+            min-height: auto;
+            min-width: auto;
+            text-size-adjust: 100%;
+            width: 160.969px;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+            margin: 25px 0 0;
+        }
+
+        .footer-wrap footer {
+            box-sizing: border-box;
+            color: #fff;
+            display: flex;
+            height: 22px;
+            text-size-adjust: 100%;
+            width: 160.969px;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+        }
+
+        .footer-wrap footer span {
+            box-sizing: border-box;
+            color: #fff;
+            display: block;
+            height: 22px;
+            min-height: auto;
+            min-width: auto;
+            text-size-adjust: 100%;
+            width: 160.969px;
+            font: normal normal 400 normal 13px / 22.1px Lato, Helvetica, Arial,
+            sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="background">
+    </div>
+    <form name="loginForm" class="loginForm" onsubmit="loginSubmit(event)">
+        <div class="logo">
+        </div>
+        <h1>
+            Welcome to the SCS Login
+        </h1>
+        <h4>
+            For the SCS demo just use 'admin':'admin'.
+        </h4>
+        <div class="inputs">
+            <div class="input-wrap">
+                <input type="text" placeholder="Username" name="username" maxlength="128"/>
+                <p class="error-required">
+                    Username is required
+                </p>
+            </div>
+            <div class="input-wrap">
+                <input type="password" placeholder="Password" name="password" maxlength="128"/>
+                <p class="error-required">
+                    Password is required
+                </p>
+                <p class="error-incorrect">
+                    Username or password is incorrect
+                </p>
+            </div>
+            <button type="submit">login</button>
+        </div>
+        <div class="footer-wrap">
+            <footer>
+                <span>Copyright Tomitribe © 2018</span>
+            </footer>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    let fetchToken = function (username, password, type = 'basic', grant_type = 'password') {
+        return new Promise((res, rej) => {
+            let URI = {
+                        basic: '/tag/api/token',
+                        oauth2: '/oauth2/token'
+                    },
+                    grantTypes = ['password', ,],
+                    gtIndex = grantTypes.indexOf(grant_type),
+                    params = {
+                        password,
+                        username,
+                        type
+                    },
+                    path = URI[type];
+
+            if (!path) return rej('invalid Token Type');
+
+            if (type === 'oauth2') {
+                switch (grant_type) {
+                    case 'password':
+                        params = {
+                            password,
+                            username,
+                            grant_type
+                        };
+                        break;
+                    case 'client_credentials':
+                        params = {
+                            client_id: username,
+                            client_secret: password,
+                            grant_type
+                        };
+                        break;
+                    case 'refresh_token':
+                        path = URI['basic'];
+                        params = {
+                            refresh_token: username,
+                            type,
+                            grant_type
+                        };
+                        break;
+                    default:
+                        return rej('invalid Grant Type');
+                }
+            }
+            const esc = encodeURIComponent, body = Object.keys(params)
+                    .map(k => esc(k) + '=' + esc(params[k]))
+                    .join('&');
+
+            let host = location.protocol + '//' + location.host;
+
+            fetch(`${host}${path}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body
+            })
+                    .then(response => response.text())
+                    .then(text => {
+                        try {
+                            res(JSON.parse(text));
+                        } catch (err) {
+                            rej(err, text);
+                        }
+                    }).catch(rej);
+        })
+    }, loginSubmit = function (event) {
+        event.preventDefault();
+        const form = event.target;
+
+        let redir = document.referrer;
+        let override = getParameterByName('ref');
+
+        if (override !== null || "" !== override || null == redir || undefined === redir) {
+            redir = override;
+        }
+
+        fetchToken(form.username.value, form.password.value, 'oauth2').then(promise => {
+            console.debug();
+            //let json64 = btoa(JSON.stringify(promise.access));
+            let json64 = btoa(JSON.stringify(promise.access_token));
+            document.cookie = 'pxc-scs-cookie=' + promise.access_token + "; path=/;";
+            document.location.href = redir;
+
+        });
+        //examples:
+        /*
+        fetchToken('admin', 'admin').then(console.log)
+        fetchToken('admin', 'admin', 'oauth2').then(console.log)
+        fetchToken('client', 'clientsecret', 'oauth2', 'client_credentials').then(console.log)
+        */
+    }, getParameterByName = function (name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+</script>
+</body>
+</html>

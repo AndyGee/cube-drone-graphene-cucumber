@@ -1,0 +1,53 @@
+<h1>Hello SCS Teams</h1>
+
+<p>Let's start using security through the TAG (Tribestream API Gateway)...</p>
+
+
+<p id="loginTxt"></p>
+
+<button id="myButton" class="float-left submit-button"></button>
+<button id="selfRedir" class="float-left submit-button">Reload [Click me]</button>
+
+<script type="text/javascript">
+
+    let c = getCookie("pxc-scs-cookie");
+
+    if (c) {
+
+        document.getElementById("loginTxt").innerText = "You are logged in with: " + c
+                + "\n\nAdd a breakpoint at AuthenticationJwtFilter#attemptAuthentication and reload to see the code in action";
+        document.getElementById("myButton").innerText = "Logout [Click me]";
+        document.getElementById("myButton").onclick = function () {
+            document.cookie = "pxc-scs-cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            location.href = document.location.href;
+        };
+    } else {
+        document.getElementById("loginTxt").innerText = "Try logging in with user 'admin' and password 'admin' - Hey, it's a demo!";
+        document.getElementById("myButton").innerText = "Go to the login page [Click me]";
+        document.getElementById("myButton").onclick = function () {
+            location.href = "/scs/login?ref=" + encodeURIComponent(document.location);
+        };
+    }
+
+    document.getElementById("selfRedir").onclick = function () {
+        location.href = document.location.href;
+    };
+
+    function getCookie(cname) {
+        const name = cname + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) === 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+
+</script>

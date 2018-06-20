@@ -1,0 +1,14 @@
+#transcluder:
+#  image: dockerregistry.europe.phoenixcontact.com/crisp/oss-dev-transcluder
+#  tty: true
+#  environment:
+#    - APPLICATION_HOST=testme
+#    - APPLICATION_PATH=shopping
+#    - APPLICATION_PORT=8401
+#    - SSI_WHITELIST_PATHES=common
+#    - SSI_TARGET_HOST=www.sops.europe.phoenixcontact.com
+
+helloworld:
+  image: dockercloud/hello-world
+  ports:
+    - "80:80"

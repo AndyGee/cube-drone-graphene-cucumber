@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<arquillian xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://jboss.org/schema/arquillian"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian
+  http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+
+  <extension qualifier="docker">
+    <property name="serverVersion">1.34</property>
+    <!--property name="serverUri">http://localhost:2375</property-->
+    <property name="serverUri">unix:///var/run/docker.sock</property>
+    <!--property name="dockerContainersFile">/home/andy/github/pxc/pxc-scs-app/docker-compose.yml</property-->
+    <property name="dockerContainersFile">src/test/resources/docker-compose.yml</property>
+    <property name="cubeSpecificProperties">
+      helloworld:
+        await:
+          strategy: sleeping
+          sleepTime: 2 s
+    </property>
+  </extension>
+
+  <!--container qualifier="browser"/-->
+
+  <extension qualifier="webdriver">
+    <property name="remote">true</property>
+    <property name="remoteReusable">true</property>
+    <property name="browser">chrome</property>
+    <property name="chromePrintOptions">true</property>
+    <!--property name="remoteAddress">http://localhost:14444/wd/hub</property-->
+  </extension>
+
+  <!--extension qualifier="cubedrone">
+    <property name="browserDockerfileLocation">src/test/resources</property>
+  </extension-->
+
+
+<!--  <extension qualifier="drone">
+    &lt;!&ndash;property name="skip">true</property&ndash;&gt;
+  </extension>-->
+
+  <!--  <extension qualifier="boot-servers">
+      <property name="host">localhost</property>
+    </extension>-->
+
+  <extension qualifier="graphene">
+    <property name="url">http://dockerHost:9999/pxc</property>
+  </extension>
+
+</arquillian>

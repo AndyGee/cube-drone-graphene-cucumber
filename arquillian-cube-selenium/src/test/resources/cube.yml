@@ -1,0 +1,11 @@
+browser:
+  image: dockerregistry.europe.phoenixcontact.com/boot/standalone-chrome-debug:latest
+  exposedPorts: [4444/tcp,5900/tcp]
+  await:
+      #strategy: polling
+      strategy: AwaitSelenium
+      timeout: 30
+  #env: ["LICENSE=accept","JVM_OPTS=-Djava.rmi.server.hostname=localhost","CATALINA_OPTS=-Djava.security.egd=file:/dev/./urandom"]
+  portBindings: [4444->4444/tcp,5900->5900/tcp]
+  shmSize: 2000
+  extraHosts: ["${hostname:-badhost}:172.17.0.1"]
