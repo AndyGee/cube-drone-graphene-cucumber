@@ -24,7 +24,7 @@ public class Common extends TestBoot {
      */
     @Before
     public void before() {
-        System.out.println("port = " + this.getPortPxc());
+        System.out.println("App port = " + this.getPortPxc());
     }
 
     @When("^the page opens in the docker container$")
@@ -64,8 +64,4 @@ public class Common extends TestBoot {
         System.out.println("Closing everything");
     }
 
-    @Then("^just finish the test$")
-    public void justFinishTheTest() {
-        System.out.println("I'm just cleaning up now....");
-    }
 }

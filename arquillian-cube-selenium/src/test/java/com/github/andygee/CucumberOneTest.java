@@ -27,7 +27,7 @@ import org.springframework.test.context.junit4.rules.SpringMethodRule;
 @CucumberOptions(
         features = {"classpath:features/one.feature"},
         //glue = {"classpath:com/tomitribe/driver/glue/"},
-        plugin = {"html:target/one.html", "json:target/one.json"}
+        plugin = {"json:target/one.json"}
 )
 @RunAsClient
 @SuppressWarnings("ArquillianClassEnabled")

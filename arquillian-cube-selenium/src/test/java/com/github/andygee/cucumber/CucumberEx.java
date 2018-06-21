@@ -59,7 +59,7 @@ public class CucumberEx extends Cucumber {
 
         try {
             super.run(notifier);
-        } catch (final Exception e) {
+        } catch (final Throwable e) {
             e.printStackTrace();
             Logger.getLogger(CucumberEx.class.getName()).log(Level.WARNING, "Failed to run", e);
         }
