@@ -45,7 +45,7 @@ public class CucumberOneTest {
     }).around(new SpringClassRule());
 
     @Rule
-    public final MethodRuleChain chainMethod = MethodRuleChain.outer(new ArquillianTest());
+    public final MethodRuleChain chainMethod = MethodRuleChain.outer(new ArquillianTest()).around(new SpringMethodRule());
 
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();

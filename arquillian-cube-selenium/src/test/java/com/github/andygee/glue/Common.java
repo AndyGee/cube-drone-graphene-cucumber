@@ -53,11 +53,12 @@ public class Common extends TestBoot {
             System.out.println("DO NOT KILL THE PROCESS, or you'll end up with dangling containers - See the README.adoc");
             try (final ServerSocket ss = new ServerSocket(6666)) {
                 try (final Socket s = ss.accept()) {
-                    //no-op
+                    //no-op - just wait
                 }
             }
         } else {
             System.out.println("Test environment completed");
+            System.out.println("If you add the -Dwait=true property, then the test will pause here...");
         }
 
         System.out.println("Closing everything");
